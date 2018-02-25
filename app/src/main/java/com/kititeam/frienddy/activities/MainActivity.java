@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.kititeam.frienddy.R;
@@ -27,6 +29,7 @@ public class MainActivity extends BaseActivity {
     private SchedulesFragment schedulesFragment;
     private FriendsFragment friendsFragment;
     private MenuItem prevMenuItem;
+    private int menuRes = -1;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -37,12 +40,18 @@ public class MainActivity extends BaseActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     vpMain.setCurrentItem(0);
+                    menuRes = R.menu.menu_groups;
+                    invalidateOptionsMenu();
                     return true;
                 case R.id.navigation_dashboard:
                     vpMain.setCurrentItem(1);
+                    menuRes = -1;
+                    invalidateOptionsMenu();
                     return true;
                 case R.id.navigation_notifications:
                     vpMain.setCurrentItem(2);
+                    menuRes = -1;
+                    invalidateOptionsMenu();
                     return true;
             }
             return false;
@@ -94,5 +103,12 @@ public class MainActivity extends BaseActivity {
         viewPagerAdapter.addFragment(schedulesFragment);
         viewPagerAdapter.addFragment(friendsFragment);
         vpMain.setAdapter(viewPagerAdapter);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(menuRes, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
