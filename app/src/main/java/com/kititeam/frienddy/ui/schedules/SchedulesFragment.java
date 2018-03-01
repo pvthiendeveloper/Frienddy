@@ -24,6 +24,6 @@ public class SchedulesFragment extends BaseFragment {
 
     @Override
     public int getLayoutResourceId() {
-        return R.layout.fragment_friends;
+        return R.layout.fragment_schedule;
     }
 }

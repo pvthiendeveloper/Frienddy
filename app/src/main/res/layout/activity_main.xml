@@ -13,11 +13,11 @@
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bnvMain"
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/spaceNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation" />
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:space_background_color="#2962FF" />
 
 </LinearLayout>

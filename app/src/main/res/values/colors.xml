@@ -6,4 +6,6 @@
     <color name="white">#FFFFFF</color>
     <color name="Teal50">#E0F2F1</color>
     <color name="Teal100">#B2DFDB</color>
+    <color name="blue">#2196F3</color>
+    <color name="colorIconLauncher">#fdd835</color>
 </resources>

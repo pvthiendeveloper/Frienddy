@@ -6,4 +6,5 @@
 
     <!--Menu-->
     <string name="menu_create_group">Create Group</string>
+    <string name="menu_friends">Friends</string>
 </resources>
